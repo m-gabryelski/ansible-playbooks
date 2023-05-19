@@ -1,7 +1,17 @@
 ---
-# Installation and Configuration of the Web Server (Apache, MariaDB, PHP)
-- name: Installation and Configuration of the Web Server
+# Installation and configuration of the web server (Apache, MariaDB, PHP)
+- name: Installation and configuration of the web server
   hosts: all
   become: true
   connection: ssh
   gather_facts: true
+
+  pre_tasks:
+  # Including system viariables
+  - name: Including system viariables
+    include_vars: "{{ ansible_os_family | lower }}-vars.yml"
+    
+  tasks:
+  # Installing the required web server packages
+  - name: Installing the required web server packages
+    include_tasks: "{{ ansible_os_family | lower }}-install.yml"
