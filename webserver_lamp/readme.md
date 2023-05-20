@@ -1,2 +1,1 @@
-# Instalation and Configuration of the Web Server
-# (Apache, MariaDB, PHP)
+# Instalation and Configuration of the Web Server (Apache, MariaDB, PHP)
